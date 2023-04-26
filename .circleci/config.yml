@@ -28,8 +28,10 @@ jobs:
       # Use mvn clean and package as the standard maven build phase
       - run:
           name: Build
-          command: mvn clean 1234
+          command: mvn clean install -DskipTests
       # Then run your tests!
+      when :
+      	not: <<skip-test-cases>>
       - run:
           name: Test
           command: mvn test
