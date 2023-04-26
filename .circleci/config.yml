@@ -31,7 +31,9 @@ jobs:
           command: mvn clean install -DskipTests
       # Then run your tests!
       - when:
-      	not: <<pipeline.parameters.skip-test-cases>>
+          not: <<pipeline.parameters.skip-test-cases>>
+      
+        
       	
       - run:
           name: Test
