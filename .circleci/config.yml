@@ -30,8 +30,7 @@ jobs:
           name: Build
           command: mvn clean install -DskipTests
       # Then run your tests!
-      when :
-      	not: <<skip-test-cases>>
+     
       - run:
           name: Test
           command: mvn test
